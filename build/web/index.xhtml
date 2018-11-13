@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Produktkatalog</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h:dataTable value="#{productListManagedBean.productList}" var="item" border="1">
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Katalognummer"/>
+                    </f:facet>
+                    <h:outputText value="#{item.catalogNumber}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Hersteller"/>
+                    </f:facet>
+                    <h:outputText value="#{item.producer}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Bezeichnung"/>
+                    </f:facet>
+                    <h:outputText value="#{item.productName}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="Preis"/>
+                    </f:facet>
+                    <h:outputText value="#{item.price}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputText value="In den Warenkorb"/>
+                    </f:facet>
+                    <h:commandLink action="#{shoppingCartManagedBean.add(item)}" value="Hinzufügen"/>
+                </h:column>
+            </h:dataTable>
+        </h:form>
+    </h:body>
+</html>
+
