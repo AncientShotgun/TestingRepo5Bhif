@@ -21,4 +21,26 @@
     <welcome-file-list>
         <welcome-file>faces/index.xhtml</welcome-file>
     </welcome-file-list>
+    <security-constraint>
+        <display-name>ShoppingCartConstraint</display-name>
+        <web-resource-collection>
+            <web-resource-name>all</web-resource-name>
+            <description/>
+            <url-pattern>
+                /faces/*
+            </url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <description/>
+            <role-name>shoppingCartUser</role-name>
+        </auth-constraint>
+    </security-constraint>
+    <login-config>
+        <auth-method>BASIC</auth-method>
+        <realm-name>file</realm-name>
+    </login-config>
+    <security-role>
+        <description/>
+        <role-name>shoppingCartUser</role-name>
+    </security-role>
 </web-app>
