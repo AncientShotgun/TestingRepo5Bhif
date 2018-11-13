@@ -7,52 +7,53 @@ and open the template in the editor.
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Warenkorb</title>
+        <f:loadBundle var="bundle" basename="Prompts" />
+        <title>#{bundle.Titlecartview}</title>
     </h:head>
     <h:body>
         <h:dataTable value="#{shoppingCartManagedBean.shoppingCart}" var="item" border="1">
             <h:column>
                 <f:facet name="header">
-                    <h:outputText value="Katalognummer"/>
+                    <h:outputText value="#{bundle.Labelcatnum}"/>
                 </f:facet>
                 <h:outputText value="#{item.catalogNumber}"/>
             </h:column>
             <h:column>
                 <f:facet name="header">
-                    <h:outputText value="Hersteller"/>
+                    <h:outputText value="#{bundle.Labelproducer}"/>
                 </f:facet>
                 <h:outputText value="#{item.producer}"/>
             </h:column>
             <h:column>
                 <f:facet name="header">
-                    <h:outputText value="Bezeichnung"/>
+                    <h:outputText value="#{bundle.Labelname}"/>
                 </f:facet>
                 <h:outputText value="#{item.productName}"/>
             </h:column>
             <h:column>
                 <f:facet name="header">
-                    <h:outputText value="Preis"/>
+                    <h:outputText value="#{bundle.Labelprice}"/>
                 </f:facet>
                 <h:outputText value="#{item.price}"/>
             </h:column>
             <h:column>
                 <f:facet name="header">
-                    <h:outputText value="Anzahl"/>
+                    <h:outputText value="#{bundle.Labelnum}"/>
                 </f:facet>
                 <h:outputText value="#{item.amount}"/>
             </h:column>
             <h:column>
                 <f:facet name="header">
-                    <h:outputText value="Gesamtpreis"/>
+                    <h:outputText value="#{bundle.Labeltotprice}"/>
                 </f:facet>
                 <h:outputText value="#{item.totalPrice}"/>
             </h:column>
         </h:dataTable>
         <h:form>
             <h:panelGrid columns="2">
-                <h:outputText value="Bestellsumme:"/>
+                <h:outputText value="#{bundle.Labelpriceofcart}"/>
                 <h:outputText value="#{shoppingCartManagedBean.sum}"/>
-                <h:commandLink action="index.xhtml" value="Zurück zum Katalog ✔✔✔"/>
+                <h:commandLink action="index.xhtml" value="#{bundle.Backtoprodsel}"/>
         </h:panelGrid>
     </h:form>
 </h:body>
